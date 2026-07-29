@@ -1,0 +1,14 @@
+import java.util.regex.pattern;
+import java.util.regex.matcher;
+class main test {
+  public static void main(String[] args)
+  {
+    String s="ababbabbbaa";
+    String exp= "[ab]";
+
+    pattern p=pattern.compile(exp);
+    matcher m=p.matcher(s);
+      while(m.find())
+  System.out.println(m.group());
+  }
+}
