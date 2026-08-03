@@ -1,0 +1,68 @@
+package DSA;
+
+public class ArrayList {
+
+         Object[] O=new Object[10];
+         int count=0;
+         public void add(Object ele)
+         {
+        	 if(size()==O.length)
+        		 increase();
+        	 O[count++]=ele; 
+         }
+         public void increase() {
+        	 Object[]a=new Object[O.length + 5];
+        	 for(int i=0;i<O.length;i++)
+        		 a[i]=O[i];
+        	 O=a;
+         }
+         public int size()
+         {
+        	 return count;
+         }
+         public boolean  isEmpty() {
+        	 return count==0;
+         }
+         public Object get(int index)
+         {
+        	 if(index<0||index>=size())throw new IndexOutOfBoundsException();
+        	 return O[index];
+        	 
+         }
+         public void addIndex(Object ele,int index)
+         {
+        	 if(index==size()-1)increase();
+        	 if(index<0||index>size()) throw new IndexOutOfBoundsException();
+        	 for(int i=size();i>index;i--)
+        	 {
+        		 O[i]=O[i-1];
+        	 }
+        	 O[index]=ele;
+        	 count++;
+         }
+		   public void remove(int index)
+		   {
+			   if(index<0||index>=size()) throw new IndexOutOfBoundsException();
+			   for(int i=index;i<size()-1;i++)
+			   {
+				   O[i]=O[i+1];
+				   
+			   }
+			   count--;
+			   
+		 }
+		   public boolean contains(Object ele)
+		   {
+			   for(int i=0;i<size();i++) {
+				   if(O[i].equals(ele)) return true;
+			   }
+			   return false;
+		   }
+		   public void set(int index,Object ele)
+		   {
+			   if(index<0||index>=size()) throw new IndexOutOfBoundsException();
+			   O[index]=ele;
+		   }
+	}
+
+
