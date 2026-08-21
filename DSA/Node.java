@@ -1,15 +1,15 @@
-package Queue;
+package Stack;
 
 public class Node {
-	Object ele;
 	Node next;
-	
-	Node(Object ele){
+	Object ele;
+	public Object key;
+	Node(Object ele) {
 		this.ele=ele;
 	}
-	public Node(Object ele,Node next) {
-		this.ele=ele;
-		this.next=next;
-	}
-
+       public Node(Object ele,Node next) {
+    	   this.ele=ele;
+    	   this.next=next;
+    	   
+       }
 }
